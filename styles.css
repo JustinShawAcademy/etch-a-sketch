@@ -1,4 +1,19 @@
 
+@import url(
+     'https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+* {
+    font-family: "Comic Neue", cursive;
+    /* IMPORTANT: as heights of boxes will stay the same (128px) even if we add paddings */
+    /* See .result-message-container */
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: #fce8be;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -11,7 +26,7 @@ main {
     display: grid;
     width: 500px; 
     height: 500px;
-    border: 1px solid black; /* Add a border to the container itself */
+    border: 1px solid black;
 }
 
 .controls {
@@ -51,6 +66,24 @@ main {
 .mode-btn.active {
     background-color: #333;
     color: white;
+}
+
+#rainbow-btn.active {
+    background: linear-gradient(45deg, 
+        #ff0000, #ff8000, #ffff00, #80ff00, 
+        #00ff00, #00ff80, #00ffff, #0080ff, 
+        #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
+    background-size: 400% 400%;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    color: white;
+    animation: rainbowBorder 2s ease infinite;
+}
+
+@keyframes rainbowBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .square {
