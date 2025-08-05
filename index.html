@@ -12,9 +12,17 @@
         
         <div id="grid-container"></div>
 
-        <div class="grid-changer">
-            <input id="grid-size-slider" type="range" min="2" max="100" value="16">
-            <p id="grid-size-label">16 x 16</p>
+        <div class="controls">
+            <div class="grid-changer">
+                <input id="grid-size-slider" type="range" min="2" max="100" value="16">
+                <p id="grid-size-label">16 x 16</p>
+            </div>
+            
+            <div class="mode-buttons">
+                <button id="draw-btn" class="mode-btn active">Draw</button>
+                <button id="erase-btn" class="mode-btn">Erase</button>
+                <button id="rainbow-btn" class="mode-btn">Rainbow</button>
+            </div>
         </div>
 
         <script src="javascript.js"></script>
