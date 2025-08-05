@@ -4,16 +4,27 @@ main {
     justify-content: center;
 }
 
-#container {
-    display: flex;
-    flex-wrap: wrap;
+#grid-container {
+    display: grid;
     width: 500px; 
     height: 500px;
+    border: 1px solid black; /* Add a border to the container itself */
 }
 
 .square {
-    border: 1px solid black;
-    width: 31.25px;
-    height: 31.25px;
+    /* The width and height are now controlled by the grid container */
     box-sizing: border-box;
+    border: 1px solid #ddd; /* Lighter border for individual squares */
+}
+
+.grid-changer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+
+.square {
+    box-sizing: border-box;
+    border: 1px solid black;
 }
