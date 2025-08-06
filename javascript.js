@@ -4,6 +4,7 @@ const gridSizeSlider = document.getElementById('grid-size-slider');
 const drawBtn = document.getElementById('draw-btn');
 const eraseBtn = document.getElementById('erase-btn');
 const rainbowBtn = document.getElementById('rainbow-btn');
+const clearBtn = document.getElementById('clear-btn');
 const GRID_SIZE = 16;
 
 const rainbowColors = [
@@ -26,6 +27,13 @@ let currentMode = 'draw';
 function getRandomRainbowColor() {
     const randomIndex = Math.floor(Math.random() * rainbowColors.length);
     return rainbowColors[randomIndex];
+}
+
+function clearGrid() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.style.backgroundColor = '';
+    });
 }
 
 // default grid
@@ -81,6 +89,9 @@ rainbowBtn.addEventListener('click', () => {
     drawBtn.classList.remove('active');
     eraseBtn.classList.remove('active');
 });
+
+// clear button handler
+clearBtn.addEventListener('click', clearGrid);
 
 
 

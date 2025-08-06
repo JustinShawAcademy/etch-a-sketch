@@ -4,14 +4,36 @@
 
 * {
     font-family: "Comic Neue", cursive;
-    /* IMPORTANT: as heights of boxes will stay the same (128px) even if we add paddings */
-    /* See .result-message-container */
     box-sizing: border-box;
 }
 
 body {
-
     background-color: #fce8be;
+    position: relative;
+}
+
+.github-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #333;
+    text-decoration: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.github-icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.github-link:hover {
+    color: #0066cc;
+}
+
+.github-link:hover .github-icon {
+    transform: scale(1.1) rotate(2deg);
 }
 
 main {
@@ -24,8 +46,8 @@ main {
 
 #grid-container {
     display: grid;
-    width: 500px; 
-    height: 500px;
+    width: 450px; 
+    height: 450px;
     border: 1px solid black;
 }
 
@@ -84,6 +106,26 @@ main {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+.clear-btn {
+    padding: 12px 24px;
+    border: 2px solid #d63031;
+    background-color: #d63031;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.clear-btn:hover {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(214, 48, 49, 0.3);
 }
 
 .square {
